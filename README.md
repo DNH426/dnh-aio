@@ -3,7 +3,7 @@
 
 ## Tools used
  - Angular
- - Typescript
+ - TypeScript
  - JavaScript
  - Firebase
  - HTML5
