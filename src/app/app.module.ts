@@ -21,6 +21,13 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 // Service Imports
 import { ClientService } from './services/client.service';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { FinancesComponent } from './components/finances/finances.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { EditComponent } from './components/edit-/edit-.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { EditInventoryComponent } from './components/edit-inventory/edit-inventory.component';
+import { EditFinancesComponent } from './components/edit-finances/edit-finances.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +59,14 @@ export const firebaseConfig = {
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeeComponent,
+    FinancesComponent,
+    InventoryComponent,
+    EditComponent,
+    EditEmployeeComponent,
+    EditInventoryComponent,
+    EditFinancesComponent
   ],
   imports: [
     BrowserModule,
