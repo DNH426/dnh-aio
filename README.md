@@ -1,4 +1,22 @@
-# Clientpanel
+# All In One Management Alpha 1.0.2
+
+## Tools
+- Angular
+- Angular Fire 2
+- Firebase
+- jQuery
+- Typescript
+- JavaScript
+- Bootstrap 4.0
+- Tether
+- HTML 5
+- CSS 3
+
+## About
+
+A simple application for employers to manage finances, inventory, and employees. Simply create a login and update the information to your liking. AIO Management takes away the hassle of multiple programs and combines all management programs into one.
+
+## Clientpanel
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
 
