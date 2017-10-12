@@ -8,7 +8,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
-
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsComponent } from './components/clients/clients.component';
@@ -23,7 +22,14 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { ClientService } from './services/client.service';
-
+import { FinanceComponent } from './components/finance/finance.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { InventoryEditComponent } from './components/inventory-edit/inventory-edit.component';
+import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
+import { FinanceDetailsComponent } from './components/finance-details/finance-details.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
+import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 
 const appRoutes: Routes = [
   {path: '', component:DashboardComponent},
@@ -55,7 +61,15 @@ export const firebaseConfig = {
     LoginComponent,
     RegisterComponent,
     SettingsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FinanceComponent,
+    InventoryComponent,
+    InventoryEditComponent,
+    InventoryDetailsComponent,
+    FinanceDetailsComponent,
+    EmployeeComponent,
+    EmployeeEditComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
