@@ -30,11 +30,32 @@ import { FinanceDetailsComponent } from './components/finance-details/finance-de
 import { EmployeeComponent } from './components/employee/employee.component';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { FinanceEditComponent } from './components/finance-edit/finance-edit.component';
 
 const appRoutes: Routes = [
-  {path: '', component:DashboardComponent},
+  // Login Routes
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+
+  // Order Routes
+  {path: '', component:DashboardComponent},
+
+  // Finance Routes
+  {path: 'finance', component: FinanceComponent},
+  {path: 'financeEdit', component: FinanceEditComponent},
+  {path: 'financeDetails', component: FinanceDetailsComponent},
+
+  // Employee Routes
+  {path: 'employee', component: EmployeeComponent},
+  {path: 'employeeEdit', component: EmployeeEditComponent},
+  {path: 'employeeDetails', component: EmployeeDetailsComponent},
+  
+  // Invetory Routes
+  {path: 'inventory', component: InventoryComponent},
+  {path: 'inventoryEdit', component: InventoryEditComponent},
+  {path: 'inventoryView', component: InventoryDetailsComponent},
+  
+
 
 ]
 
@@ -69,7 +90,8 @@ export const firebaseConfig = {
     FinanceDetailsComponent,
     EmployeeComponent,
     EmployeeEditComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    FinanceEditComponent
   ],
   imports: [
     BrowserModule,
