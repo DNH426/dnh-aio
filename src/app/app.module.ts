@@ -31,6 +31,8 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { FinanceEditComponent } from './components/finance-edit/finance-edit.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { AddInventoryComponent } from './components/add-inventory/add-inventory.component';
 
 const appRoutes: Routes = [
   // Login Routes
@@ -69,6 +71,7 @@ export const firebaseConfig = {
 };
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +94,9 @@ export const firebaseConfig = {
     EmployeeComponent,
     EmployeeEditComponent,
     EmployeeDetailsComponent,
-    FinanceEditComponent
+    FinanceEditComponent,
+    AddEmployeeComponent,
+    AddInventoryComponent
   ],
   imports: [
     BrowserModule,

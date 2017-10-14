@@ -1,3 +1,22 @@
-<p>
-  inventory works!
-</p>
+<table  class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Cost</th>
+      <th>Order Date</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let inventory of inventory">
+      <td>{{inventory.$key}}</td>
+      <td>{{inventory.name}}</td>
+      <td>{{inventory.department}}</td>
+      <td>{{inventory.cost | currency:"USD":true}}</td>
+      <td>{{inventory.orderDate}}</td>
+      <td>{{inventory.count}}</td>
+    </tr>
+  </tbody>
+</table>

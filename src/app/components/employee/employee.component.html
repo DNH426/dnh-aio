@@ -1,3 +1,25 @@
-<p>
-  employee works!
-</p>
+<table  class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Position</th>
+      <th>Salary</th>
+      <th>Start Date</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employees.$key}}</td>
+      <td>{{employees.firstName}} {{employees.lastName}}</td>
+      <td>{{employees.position}}</td>
+      <td>{{employees.salary | currency:"USD":true}}</td>
+      <td>{{employees.startDate}}</td>
+      <td>{{employees.phone}}</td>
+      <td>{{employees.email}}</td>
+    </tr>
+  </tbody>
+</table>
+
