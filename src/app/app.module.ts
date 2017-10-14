@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -55,9 +55,9 @@ const appRoutes: Routes = [
   {path: 'inventoryEdit', component: InventoryEditComponent},
   {path: 'inventoryView', component: InventoryDetailsComponent},
   
+  {path: 'add-client', component:AddClientComponent}
 
-
-]
+];
 
 export const firebaseConfig = {
   apiKey: "AIzaSyArwaaJAwGwrxr7mqjeLdQZsD-SESVLTjM",
@@ -95,6 +95,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
