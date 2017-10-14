@@ -1,4 +1,4 @@
-# All In One Management Alpha 1.0.2
+# All In One Management Alpha 1.0.5
 
 ## Tools
 - Angular
