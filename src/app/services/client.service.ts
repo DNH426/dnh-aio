@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import { Client } from '../models/Client'
+import { Client } from '../models/Client';
 
 @Injectable()
 export class ClientService {
@@ -16,6 +16,16 @@ export class ClientService {
 
   getClients(){
     return this.clients;
+  }
+
+  newClient(client:Client){
+    this.clients.push(client);
+  }
+
+  getClient(id:string){
+    this.client = this.af.object('/clients/'+id) as FirebaseObjectObservable<Client>;
+    return this.client;
+
   }
 
 }
