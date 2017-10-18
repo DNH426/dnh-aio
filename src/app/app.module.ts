@@ -4,11 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
+// AF Imports
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-
+// Component Imports
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientsComponent } from './components/clients/clients.component';
@@ -22,18 +23,18 @@ import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+// Service
+import { EmployeeService } from './services/employee.service';
 import { ClientService } from './services/client.service';
-import { FinanceComponent } from './components/finance/finance.component';
-import { InventoryComponent } from './components/inventory/inventory.component';
-import { InventoryEditComponent } from './components/inventory-edit/inventory-edit.component';
-import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
-import { FinanceDetailsComponent } from './components/finance-details/finance-details.component';
-import { EmployeeComponent } from './components/employee/employee.component';
-import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { DashboardEmployeeComponent } from './components/dashboard-employee/dashboard-employee.component';
+import { EmployeesComponent } from './components/employees/employees.component';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
-import { FinanceEditComponent } from './components/finance-edit/finance-edit.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
-import { AddInventoryComponent } from './components/add-inventory/add-inventory.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { EmployeeSidebarComponent } from './components/employee-sidebar/employee-sidebar.component';
+
 
 const appRoutes: Routes = [
   // Login Routes
@@ -41,25 +42,16 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
 
   // Order Routes
-  {path: '', component:DashboardComponent},
-  {path: 'client/:id', component:ClientDetailsComponent},
-
-  // Finance Routes
-  {path: 'finance', component: FinanceComponent},
-  {path: 'financeEdit', component: FinanceEditComponent},
-  {path: 'financeDetails', component: FinanceDetailsComponent},
+  {path: '', component: DashboardComponent, canActivate:[AuthGuard]},
+  {path: 'client/:id', component: ClientDetailsComponent, canActivate:[AuthGuard]},
+  {path: 'edit-client/:id', component: EditClientComponent, canActivate:[AuthGuard]},
+  {path: 'add-client', component:AddClientComponent, canActivate:[AuthGuard]},
 
   // Employee Routes
-  {path: 'employee', component: EmployeeComponent},
-  {path: 'employeeEdit', component: EmployeeEditComponent},
-  {path: 'employeeDetails', component: EmployeeDetailsComponent},
-  
-  // Invetory Routes
-  {path: 'inventory', component: InventoryComponent},
-  {path: 'inventoryEdit', component: InventoryEditComponent},
-  {path: 'inventoryView', component: InventoryDetailsComponent},
-  
-  {path: 'add-client', component:AddClientComponent}
+  {path: 'employeeDashboard', component: DashboardEmployeeComponent,},
+  {path: 'add-employee', component: AddEmployeeComponent },
+  // {path: '', component: },
+  // {path: '', component: },
 
 ];
 
@@ -88,17 +80,13 @@ export const firebaseConfig = {
     RegisterComponent,
     SettingsComponent,
     PageNotFoundComponent,
-    FinanceComponent,
-    InventoryComponent,
-    InventoryEditComponent,
-    InventoryDetailsComponent,
-    FinanceDetailsComponent,
-    EmployeeComponent,
-    EmployeeEditComponent,
+    DashboardEmployeeComponent,
+    EmployeesComponent,
     EmployeeDetailsComponent,
-    FinanceEditComponent,
     AddEmployeeComponent,
-    AddInventoryComponent
+    EditEmployeeComponent,
+    EmployeeSidebarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -110,7 +98,10 @@ export const firebaseConfig = {
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    ClientService
+    ClientService,
+    EmployeeService,
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

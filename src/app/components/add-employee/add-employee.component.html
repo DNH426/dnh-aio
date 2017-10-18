@@ -1,3 +1,83 @@
-<p>
-  add-employee works!
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/employeeDashboard" href="" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add Employee
+  </div>
+  <div class="card-block">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.firstName" name="firstName" #employeeFirstName="ngModel" minlength="2"
+          required>
+        <div *ngIf="employeeFirstName.errors?.required && employeeFirstName.touched" class="alert alert-danger">
+          First name is required
+        </div>
+        <div *ngIf="employeeFirstName.errors?.minlength && employeeFirstName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="employeeLastName">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.lastName" name="lastName" #employeeLastName="ngModel" minlength="2"
+          required>
+        <div *ngIf="employeeLastName.errors?.required && employeeLastName.touched" class="alert alert-danger">
+          Last name is required
+        </div>
+        <div *ngIf="employeeLastName.errors?.minlength && employeeLastName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="positon">Position</label>
+        <input type="position" class="form-control" [(ngModel)]="employee.position" name="position" #employeePosition="ngModel" required>
+        <div *ngIf="employeePosition.errors?.required && employeePosition.touched" class="alert alert-danger">
+          Position of employee required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" [(ngModel)]="employee.email" name="email" #employeeEmail="ngModel" required>
+        <div *ngIf="employeeEmail.errors?.required && employeeEmail.touched" class="alert alert-danger">
+          Email required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" class="form-control" [(ngModel)]="employee.phone" name="phone" #employeePhone="ngModel" minlength="10"
+          required>
+        <div *ngIf="employeePhone.errors?.minlength && employeePhone.touched" class="alert alert-danger">
+          Add a valid phone number
+        </div>
+      </div>
+
+
+      <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="text" class="form-control" [(ngModel)]="employee.startDate" name="phone" #employeeStartDate="ngModel" minlength="10"
+            required>
+          <div *ngIf="employeeStartDate.errors?.minlength && employeeStartDate.touched" class="alert alert-danger">
+            Add a valid date
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="number" class="form-control" [(ngModel)]="employee.salary" name="balance">
+      </div>
+      <input type="submit" class="btn btn-primary btn-blo" value="submit">
+    </form>
+  </div>
+</div>
