@@ -66,7 +66,7 @@
 
       <div class="form-group">
           <label for="startDate">Start Date</label>
-          <input type="text" class="form-control" [(ngModel)]="employee.startDate" name="phone" #employeeStartDate="ngModel" minlength="10"
+          <input type="text" class="form-control" [(ngModel)]="employee.startDate" name="startDate" #employeeStartDate="ngModel" minlength="2"
             required>
           <div *ngIf="employeeStartDate.errors?.minlength && employeeStartDate.touched" class="alert alert-danger">
             Add a valid date
@@ -75,7 +75,7 @@
 
       <div class="form-group">
         <label for="salary">Salary</label>
-        <input type="number" class="form-control" [(ngModel)]="employee.salary" name="balance">
+        <input type="number" class="form-control" [(ngModel)]="employee.salary" name="salary">
       </div>
       <input type="submit" class="btn btn-primary btn-blo" value="submit">
     </form>

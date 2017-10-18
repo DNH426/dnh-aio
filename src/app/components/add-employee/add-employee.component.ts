@@ -15,9 +15,9 @@ export class AddEmployeeComponent implements OnInit {
     lastname:'',
     email:'',
     phone:'',
+    startDate:'',
     salary:0
   }
-
 
   constructor(
     public flashMessagesService:FlashMessagesService,

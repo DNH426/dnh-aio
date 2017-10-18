@@ -4,5 +4,6 @@ export interface Employee{
     lastname?:string;
     email?:string;
     phone?:string;
+    startDate?:string;
     salary?:number;
 }
