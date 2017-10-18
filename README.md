@@ -1,9 +1,12 @@
-# All In One Management Alpha 1.0.5
+# All In One Management Alpha 1.0.8
 
 ## Tools
 - Angular
 - Angular Fire 2
 - Firebase
+- Express
+- font-awesome
+- rxjs
 - jQuery
 - Typescript
 - JavaScript
