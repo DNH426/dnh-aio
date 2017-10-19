@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/inventoryDashboard" href="" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back To Dashboard</a>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Add to Inventory
+  </div>
+  <div class="card-block">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.name" name="name" #inventoryName="ngModel" minlength="2"
+          required>
+        <div *ngIf="inventoryName.errors?.required && inventoryName.touched" class="alert alert-danger">
+          A name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.department" name="department" #inventoryDepartment="ngModel" required>
+        <div *ngIf="inventoryDepartment.errors?.required && inventoryDepartment.touched" class="alert alert-danger">
+          Which department is this item for?
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="purchaseDate">Purchase Date</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.purchaseDate" name="purchaseDate" #inventoryPurchaseDate="ngModel" required>
+        <div *ngIf="inventoryPurchaseDate.errors?.required && inventoryPurchaseDate.touched" class="alert alert-danger">
+          Purchase Date is rquired
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" [(ngModel)]="inventory.price" name="price">
+      </div>
+
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" [(ngModel)]="inventory.quantity" name="quantity">
+      </div>
+
+      
+      <input type="submit" class="btn btn-primary btn-blo" value="submit">
+    </form>
+  </div>
+</div>

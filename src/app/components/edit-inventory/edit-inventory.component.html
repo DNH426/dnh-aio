@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-6">
+    <a [routerLink]="['/inventory/'+id]" href="" class="btn btn-link">
+      <i class="fa fa-arrow-circle-o-left"></i> Back To Details</a>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    Edit Inventory
+  </div>
+  <div class="card-block">
+    <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-group">
+
+        <label for="name">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.name" name="name" #inventoryName="ngModel" minlength="2"
+          required>
+        <div *ngIf="inventoryName.errors?.required && inventoryName.touched" class="alert alert-danger">
+          Name is required
+        </div>
+        <div *ngIf="inventoryName.errors?.minlength && inventoryName.touched" class="alert alert-danger">
+          Must be at least 2 characters
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.department" name="department" #inventoryDepartment="ngModel" required>
+        <div *ngIf="inventoryDepartment.errors?.required && inventoryDepartment.touched" class="alert alert-danger">
+          Inventory department is required
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="purchaseDate">Date Purchased</label>
+        <input type="text" class="form-control" [(ngModel)]="inventory.purchaseDate" name="purchaseDate" #inventoryPurchaseDate="ngModel" minlength="6"
+          required>
+        <div *ngIf="inventoryPurchaseDate.errors?.minlength && inventoryPurchaseDate.touched" class="alert alert-danger">
+          Add a valid date (mm/dd/yy)
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" [(ngModel)]="inventory.price" name="price">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" [(ngModel)]="inventory.quantity" name="quantity">
+      </div>
+
+
+
+      <input type="submit" class="btn btn-primary btn-blo" value="submit">
+    </form>
+  </div>
+</div>

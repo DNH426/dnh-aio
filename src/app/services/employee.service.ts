@@ -27,8 +27,8 @@ export class EmployeeService {
     return this.employee;
 
   }
-  updateEmployee(id:string, client:Employee){
-    return this.employees.update(id, client);
+  updateEmployee(id:string, employee:Employee){
+    return this.employees.update(id, employee);
   }
 
   deleteEmployee(id:string){

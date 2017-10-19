@@ -22,11 +22,6 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
-// Service
-import { EmployeeService } from './services/employee.service';
-import { ClientService } from './services/client.service';
-import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { DashboardEmployeeComponent } from './components/dashboard-employee/dashboard-employee.component';
 import { EmployeesComponent } from './components/employees/employees.component';
@@ -34,6 +29,18 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { EmployeeSidebarComponent } from './components/employee-sidebar/employee-sidebar.component';
+import { DashboardInventoryComponent } from './components/dashboard-inventory/dashboard-inventory.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { InventoryDetailsComponent } from './components/inventory-details/inventory-details.component';
+import { AddInventoryComponent } from './components/add-inventory/add-inventory.component';
+import { EditInventoryComponent } from './components/edit-inventory/edit-inventory.component';
+import { InventorySidebarComponent } from './components/inventory-sidebar/inventory-sidebar.component';
+
+// Service
+import { InventoryService } from './services/inventory.service';
+import { EmployeeService } from './services/employee.service';
+import { ClientService } from './services/client.service';
+import { AuthService } from './services/auth.service';
 
 
 const appRoutes: Routes = [
@@ -52,6 +59,14 @@ const appRoutes: Routes = [
   {path: 'add-employee', component: AddEmployeeComponent },
   {path: 'employee/:id', component: EmployeeDetailsComponent },
   {path: 'edit-employee/:id', component:EditEmployeeComponent },
+
+  // Inventory Routes
+  {path: 'inventoryDashboard', component: DashboardInventoryComponent },
+  {path: 'add-inventory', component: AddInventoryComponent },
+  {path: 'inventory/:id', component: InventoryDetailsComponent },
+  {path: 'edit-inventory/:id', component: EditInventoryComponent },
+
+
 
 ];
 
@@ -86,6 +101,12 @@ export const firebaseConfig = {
     AddEmployeeComponent,
     EditEmployeeComponent,
     EmployeeSidebarComponent,
+    DashboardInventoryComponent,
+    InventoryComponent,
+    InventoryDetailsComponent,
+    AddInventoryComponent,
+    EditInventoryComponent,
+    InventorySidebarComponent,
 
   ],
   imports: [
@@ -100,6 +121,7 @@ export const firebaseConfig = {
     AngularFireDatabase,
     ClientService,
     EmployeeService,
+    InventoryService,
     AuthService,
     AuthGuard
   ],
