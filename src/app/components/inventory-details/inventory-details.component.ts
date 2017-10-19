@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InventoryService } from '../../services/inventory.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Inventory } from '../../models/Inventory';
+import { Inventory } from '../../models/inventory';
 
 @Component({
   selector: 'app-inventory-details',

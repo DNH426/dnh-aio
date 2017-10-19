@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InventoryService } from '../../services/inventory.service';
-import { Inventory } from  '../../models/Inventory';
+import { Inventory } from  '../../models/inventory';
 
 @Component({
   selector: 'app-inventory',
