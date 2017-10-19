@@ -37,7 +37,7 @@ export class AddEmployeeComponent implements OnInit {
     } else {
       // console.log(valid);
       this.employeeService.newEmployee(value);
-      this.flashMessagesService.show("New employee added", {cssClass: 'alert-danger', timeout: 5000});
+      this.flashMessagesService.show("New employee added", {cssClass: 'alert-success', timeout: 5000});
       this.router.navigate(['add-employee']);
     }
   }

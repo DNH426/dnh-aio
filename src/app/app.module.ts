@@ -50,8 +50,8 @@ const appRoutes: Routes = [
   // Employee Routes
   {path: 'employeeDashboard', component: DashboardEmployeeComponent,},
   {path: 'add-employee', component: AddEmployeeComponent },
-  // {path: '', component: },
-  // {path: '', component: },
+  {path: 'employee/:id', component: EmployeeDetailsComponent },
+  {path: 'edit-employee/:id', component:EditEmployeeComponent },
 
 ];
 
